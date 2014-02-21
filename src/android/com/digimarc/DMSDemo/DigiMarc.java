@@ -16,7 +16,7 @@
        specific language governing permissions and limitations
        under the License.
 */
-package com.digimarc.DMSDemo;
+package org.apache.cordova.digimarc;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
@@ -72,9 +72,7 @@ import com.digimarc.dms.DMSStatus;
 import com.digimarc.dms.resolver.ResolveResult;
 import com.digimarc.dms.resolver.StandardPayoff
 
-
-
-public class DigiMarc extends CordovaPlugin, Activity  implements	DMSIAudioVisualizerListener{
+public class DigiMarc extends CordovaPlugin implements	DMSIAudioVisualizerListener{
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext pCallbackContext) throws JSONException 
 	{
@@ -94,10 +92,13 @@ public class DigiMarc extends CordovaPlugin, Activity  implements	DMSIAudioVisua
 		}
 		else
 		{
-			callbackContext.error("error." + action + " is not a supported function. Did you mean ?");
+			callbackContext.error("socialSharing." + action + " is not a supported function. Did you mean '" + ACTION_SHARE_EVENT + "'?");
 			return false;
 		}
 	}
+	
+	
+	
 	
 	private DMSSurfaceView mSurfaceView = null;
 	private Context mContext = null;
