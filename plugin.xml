@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+           id="com.digimarc.DMSDemo"
+      version="0.0.1">
+
+    <name>DigiMarc</name>
+    <description>Cordova DigiMarc Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova, digimarc</keywords>
+
+<js-module src="www/Digimarc.js" name="Digimarc">
+    <clobbers target="com.digimarc" />
+</js-module>
+
+    <!-- android -->
+    <platform name="android">
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="Digimarc">
+	            <param name="android-package" value="com.digimarc.DMSDemo.DigiMarc"/>
+	        </feature>
+        </config-file>
+
+        <config-file target="AndroidManifest.xml" parent="/*">
+            <uses-permission android:name="android.permission.CAMERA" />
+			<uses-permission android:name="android.permission.INTERNET" />
+			<uses-permission android:name="android.permission.READ_PHONE_STATE" />
+			<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+			<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+			<uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+			<uses-feature
+				android:name="android.hardware.camera"
+				android:required="true" />
+			<uses-feature
+				android:name="android.hardware.camera.autofocus"
+				android:required="false" />
+        </config-file>
+
+		<lib-file src="src/android/armeabi-v7a/libDMSAudio.so" arch="device" />
+		<lib-file src="src/android/armeabi-v7a/libDMSImage.so" arch="device" />
+		<lib-file src="src/android/armeabi-v7a/libzxing.so" arch="device" />
+		<lib-file src="src/android/DMS.jar" arch="device" />
+
+        <source-file src="src/android/DigiMarc.java" target-dir="src/com/digimarc/DMSDemo/" />
+
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSCache.java" target-dir="src/com/digimarc/DMSUtils" />
+		<source-file src="src/android/com/digimarc/DMSUtils/DMSConstants.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSCrosshairView.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSDebugLog.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSErrorMsgDialog.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSFileIO.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSInactiveItem.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSItemData.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSListviewAdapter.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSNameValuePair.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSOpsCounter.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSSortedFileModifyDate.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSUtils.java" target-dir="src/com/digimarc/DMSUtils" />
+        <source-file src="src/android/com/digimarc/DMSUtils/DMSBitmapUtils.java" target-dir="src/com/digimarc/DMSUtils" />
+        
+        <source-file src="src/android/com/digimarc/DMSDemo/DMSCameraWrapper.java" target-dir="src/com/digimarc/DMSDemo" />
+		<source-file src="src/android/com/digimarc/DMSDemo/DMSCredentials.java" target-dir="src/com/digimarc/DMSDemo" />
+        <source-file src="src/android/com/digimarc/DMSDemo/DMSFocusHandler.java" target-dir="src/com/digimarc/DMSDemo" />
+        <source-file src="src/android/com/digimarc/DMSDemo/DMSPayoffListener.java" target-dir="src/com/digimarc/DMSDemo" />
+        <source-file src="src/android/com/digimarc/DMSDemo/DMSPreferenceActivity.java" target-dir="src/com/digimarc/DMSDemo" />
+        <source-file src="src/android/com/digimarc/DMSDemo/DMSPreviewCallback.java" target-dir="src/com/digimarc/DMSDemo" />
+        <source-file src="src/android/com/digimarc/DMSDemo/DMSSurfaceView.java" target-dir="src/com/digimarc/DMSDemo" />
+        <source-file src="src/android/com/digimarc/DMSDemo/DMSTorchBlacklist.java" target-dir="src/com/digimarc/DMSDemo" />
+        <source-file src="src/android/com/digimarc/DMSDemo/DMSVisualizationView.java" target-dir="src/com/digimarc/DMSDemo" />
+        <source-file src="src/android/com/digimarc/DMSDemo/DMSDemo.java" target-dir="src/com/digimarc/DMSDemo" />
+
+    </platform>
+</plugin>
