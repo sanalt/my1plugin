@@ -1,13 +1,6 @@
-var argscheck = require('cordova/argscheck'),
-    utils = require('cordova/utils'),
-    exec = require('cordova/exec');
+var exec = require('cordova/exec');
+var platform = require('cordova/platform');
 
-var digigmarc = 
-{
-    start:function(successCB, errorCB)
-    {
-		cordova.exec(successCB, errorCB, "DigiMarc", "start");
-    }
-};
-
-module.exports = digigmarc;
+module.exports = function(message, completeCallback) {
+	exec(completeCallback, null, "DigiMarc", "DigiMarc", [message]);
+}

@@ -20,38 +20,30 @@ package com.digimarc.DMSDemo;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
-import org.apache.cordova.PluginResult;
 import org.json.JSONArray;
 import org.json.JSONException;
-import org.json.JSONObject;
 
-
-import java.nio.ByteBuffer;
-import java.util.ArrayList;
-import java.util.List;
+import android.content.Context;
+import android.content.Intent;
 
 public class DigiMarc extends CordovaPlugin{
-	@Override
-	public boolean execute(String action, JSONArray args, CallbackContext pCallbackContext) throws JSONException 
-	{
-		this.callbackContext = pCallbackContext;
-		if (action.equals("start")) 
-		{
-			this.cordova.getThreadPool().execute(new Runnable()
-			{
-                public void run() 
-                {
-                    String res = "hello how are you";
-                    callbackContext.success(res);
-                }
-            });
-			callbackContext.sendPluginResult(new PluginResult(PluginResult.Status.OK));
-			return true;
-		}
-		else
-		{
-			callbackContext.error("socialSharing." + action + " is not a supported function. Did you mean '" + ACTION_SHARE_EVENT + "'?");
-			return false;
-		}
-	}
+
+public DigiMarc() {
+    }
+    
+public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
+        if (action.equals("DigiMarc")) {
+            this.DigiMarc(args.getString(0));
+        }
+        else {
+            return false;
+        }
+
+        // Only alert and confirm are async.
+        callbackContext.success("hahahaha");
+        return true;
+    }
+    
+    public void DigiMarc(String component) {
+    }
 }
