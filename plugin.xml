@@ -39,10 +39,10 @@ xmlns:android="http://schemas.android.com/apk/res/android"
 				android:required="false" />
         </config-file>
 
-		<lib-file src="src/android/armeabi-v7a/libDMSAudio.so" arch="device" />
-		<lib-file src="src/android/armeabi-v7a/libDMSImage.so" arch="device" />
-		<lib-file src="src/android/armeabi-v7a/libzxing.so" arch="device" />
-		<lib-file src="src/android/DMS.jar" arch="device" />
+		<source-file src="src/android/armeabi-v7a/libDMSAudio.so" target-dir="libs" />
+		<source-file src="src/android/armeabi-v7a/libDMSImage.so" target-dir="libs" />
+		<source-file src="src/android/armeabi-v7a/libzxing.so" target-dir="libs" />
+		<source-file src="src/android/DMS.jar" target-dir="libs"/>
 
         <source-file src="src/android/DigiMarc.java" target-dir="src/com/digimarc/DMSDemo/" />
 
