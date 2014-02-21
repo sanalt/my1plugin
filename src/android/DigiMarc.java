@@ -72,7 +72,7 @@ import com.digimarc.dms.DMSStatus;
 import com.digimarc.dms.resolver.ResolveResult;
 import com.digimarc.dms.resolver.StandardPayoff
 
-public class DigiMarc extends CordovaPlugin implements	DMSIAudioVisualizerListener{
+public class DigiMarc extends CordovaPlugin, Activity implements	DMSIAudioVisualizerListener{
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext pCallbackContext) throws JSONException 
 	{
