@@ -30,48 +30,6 @@ import java.nio.ByteBuffer;
 import java.util.ArrayList;
 import java.util.List;
 
-import android.annotation.SuppressLint;
-import android.annotation.TargetApi;
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.graphics.Paint;
-import android.graphics.PorterDuff;
-import android.graphics.drawable.ColorDrawable;
-import android.net.Uri;
-import android.os.Build;
-import android.os.Bundle;
-import android.preference.PreferenceManager;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ListView;
-
-import com.digimarc.DMSUtils.DMSCrosshairView;
-import com.digimarc.DMSUtils.DMSDebugLog;
-import com.digimarc.DMSUtils.DMSErrorMsgDialog;
-import com.digimarc.DMSUtils.DMSErrorMsgDialog.TYPE;
-import com.digimarc.DMSUtils.DMSInactiveItem;
-import com.digimarc.DMSUtils.DMSItemData;
-import com.digimarc.DMSUtils.DMSListviewAdapter;
-import com.digimarc.DMSUtils.DMSCache;
-
-import com.digimarc.dms.DMSIListener;
-import com.digimarc.dms.DMSManager;
-import com.digimarc.dms.DMSMessage;
-import com.digimarc.dms.DMSPayload;
-import com.digimarc.dms.DMSQRCodeResult;
-import com.digimarc.dms.DMSStatus;
-import com.digimarc.dms.resolver.ResolveResult;
-import com.digimarc.dms.resolver.StandardPayoff
-
 public class DigiMarc extends CordovaPlugin{
 	@Override
 	public boolean execute(String action, JSONArray args, CallbackContext pCallbackContext) throws JSONException 
